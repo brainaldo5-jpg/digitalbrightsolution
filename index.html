@@ -1,0 +1,2785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Digital Bright Solutions | Printing, Design, Websites & Computer Services</title>
+
+<meta name="description"
+content="Digital Bright Solutions provides nearby printing, typing, photocopying, graphic design, website development, computer training and technical support services.">
+
+<meta name="keywords"
+content="printing near me, typing services, photocopying, graphic design, website development, computer training, technical support, Sango Ota, Ogun State">
+
+<meta name="author" content="Digital Bright Solutions">
+
+<meta property="og:title" content="Digital Bright Solutions">
+<meta property="og:description" content="Your nearby place for digital and business services.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://digitalbrightsolutions.space/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=85">
+
+<meta name="theme-color" content="#2563EB">
+
+<link rel="canonical" href="https://digitalbrightsolutions.space/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+
+:root{
+    --bg:#F7F8FA;
+    --white:#FFFFFF;
+    --surface:#F1F4F7;
+    --warm:#FAF7F0;
+
+    --text:#17202A;
+    --heading:#101828;
+    --muted:#667085;
+
+    --blue:#2563EB;
+    --blue-dark:#1D4ED8;
+    --blue-soft:#EFF6FF;
+
+    --green:#16A36F;
+    --green-dark:#087F57;
+    --green-soft:#ECFDF5;
+
+    --orange:#E8912D;
+    --orange-soft:#FFF7ED;
+
+    --border:#E4E7EC;
+
+    --shadow:0 18px 50px rgba(16,24,40,.08);
+    --shadow-small:0 8px 24px rgba(16,24,40,.06);
+
+    --radius:24px;
+    --radius-small:16px;
+
+    --max:1180px;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.65;
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+button,
+a{
+    -webkit-tap-highlight-color:transparent;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:min(calc(100% - 36px),var(--max));
+    margin:auto;
+}
+
+.section{
+    padding:100px 0;
+}
+
+.section-label{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:7px 12px;
+    border-radius:999px;
+    background:var(--blue-soft);
+    color:var(--blue-dark);
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.section-title{
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(30px,5vw,48px);
+    line-height:1.08;
+    letter-spacing:-1.5px;
+    color:var(--heading);
+    max-width:720px;
+}
+
+.section-subtitle{
+    color:var(--muted);
+    max-width:650px;
+    margin-top:18px;
+    font-size:17px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    min-height:50px;
+    padding:0 19px;
+    border-radius:14px;
+    border:1px solid transparent;
+    font-weight:700;
+    font-size:15px;
+    cursor:pointer;
+    transition:.25s ease;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.btn-primary{
+    background:var(--blue);
+    color:white;
+    box-shadow:0 8px 20px rgba(37,99,235,.2);
+}
+
+.btn-primary:hover{
+    background:var(--blue-dark);
+}
+
+.btn-green{
+    background:var(--green);
+    color:white;
+}
+
+.btn-green:hover{
+    background:var(--green-dark);
+}
+
+.btn-light{
+    background:white;
+    border-color:var(--border);
+}
+
+.btn-light:hover{
+    border-color:#CBD2DB;
+    box-shadow:var(--shadow-small);
+}
+
+.btn-full{
+    width:100%;
+}
+
+/* NAV */
+
+.nav{
+    position:fixed;
+    z-index:1000;
+    top:0;
+    left:0;
+    width:100%;
+    padding:14px 0;
+    background:rgba(255,255,255,.86);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(228,231,236,.8);
+}
+
+.nav-inner{
+    width:min(calc(100% - 36px),var(--max));
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    font-family:"Manrope",sans-serif;
+    font-weight:800;
+}
+
+.logo-mark{
+    width:40px;
+    height:40px;
+    border-radius:12px;
+    background:var(--blue);
+    color:white;
+    display:grid;
+    place-items:center;
+    font-weight:800;
+    box-shadow:0 8px 18px rgba(37,99,235,.2);
+}
+
+.logo-text{
+    line-height:1.1;
+}
+
+.logo-text span{
+    display:block;
+    color:var(--muted);
+    font-size:11px;
+    font-weight:600;
+    margin-top:3px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-links a{
+    font-size:14px;
+    font-weight:600;
+    color:#475467;
+}
+
+.nav-links a:hover{
+    color:var(--blue);
+}
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+.mobile-menu{
+    display:none;
+    width:44px;
+    height:44px;
+    border:1px solid var(--border);
+    background:white;
+    border-radius:12px;
+    font-size:21px;
+}
+
+/* HERO */
+
+.hero{
+    padding:150px 0 90px;
+    background:
+        radial-gradient(circle at 85% 20%,rgba(37,99,235,.08),transparent 30%),
+        var(--bg);
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.03fr .97fr;
+    gap:70px;
+    align-items:center;
+}
+
+.hero h1{
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(42px,6vw,70px);
+    line-height:1.01;
+    letter-spacing:-3px;
+    color:var(--heading);
+}
+
+.hero h1 span{
+    color:var(--blue);
+}
+
+.hero-text{
+    font-size:19px;
+    color:var(--muted);
+    max-width:590px;
+    margin:24px 0;
+}
+
+.hero-pills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:30px;
+}
+
+.pill{
+    padding:8px 12px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:999px;
+    font-size:13px;
+    color:#475467;
+    font-weight:600;
+}
+
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.location-line{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:22px;
+    font-size:14px;
+    color:var(--muted);
+}
+
+.location-dot{
+    width:9px;
+    height:9px;
+    background:var(--green);
+    border-radius:50%;
+}
+
+.hero-visual{
+    position:relative;
+}
+
+.hero-image{
+    width:100%;
+    height:560px;
+    object-fit:cover;
+    border-radius:32px;
+    box-shadow:var(--shadow);
+}
+
+.hero-card{
+    position:absolute;
+    bottom:24px;
+    left:-25px;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(16px);
+    padding:18px;
+    border:1px solid rgba(255,255,255,.9);
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    max-width:245px;
+}
+
+.hero-card strong{
+    display:block;
+    font-family:"Manrope",sans-serif;
+    margin-bottom:5px;
+}
+
+.hero-card small{
+    color:var(--muted);
+}
+
+/* QUICK CHOICE */
+
+.choice-section{
+    padding:20px 0 90px;
+}
+
+.choice-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.choice{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:24px;
+    transition:.25s;
+}
+
+.choice:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--shadow-small);
+}
+
+.choice-icon{
+    width:46px;
+    height:46px;
+    border-radius:14px;
+    display:grid;
+    place-items:center;
+    background:var(--blue-soft);
+    color:var(--blue);
+    font-size:21px;
+    margin-bottom:17px;
+}
+
+.choice h3{
+    font-family:"Manrope",sans-serif;
+    font-size:18px;
+    margin-bottom:6px;
+}
+
+.choice p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* SERVICES */
+
+.services{
+    background:white;
+}
+
+.service-grid{
+    margin-top:48px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.service{
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:white;
+    transition:.3s ease;
+}
+
+.service:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow);
+}
+
+.service-image{
+    height:250px;
+    overflow:hidden;
+}
+
+.service-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.service:hover .service-image img{
+    transform:scale(1.04);
+}
+
+.service-content{
+    padding:27px;
+}
+
+.service-icon{
+    width:45px;
+    height:45px;
+    border-radius:14px;
+    background:var(--blue-soft);
+    color:var(--blue);
+    display:grid;
+    place-items:center;
+    margin-bottom:15px;
+    font-size:20px;
+}
+
+.service h3{
+    font-family:"Manrope",sans-serif;
+    font-size:23px;
+    margin-bottom:8px;
+}
+
+.service p{
+    color:var(--muted);
+    margin-bottom:17px;
+}
+
+.service-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-bottom:22px;
+}
+
+.service-list span{
+    font-size:12px;
+    padding:6px 9px;
+    background:var(--surface);
+    border-radius:8px;
+    color:#475467;
+}
+
+/* TRUST */
+
+.trust{
+    background:var(--warm);
+}
+
+.trust-grid{
+    margin-top:45px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.trust-card{
+    padding:26px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:20px;
+}
+
+.trust-number{
+    font-size:29px;
+    font-family:"Manrope",sans-serif;
+    color:var(--blue);
+    font-weight:800;
+    margin-bottom:10px;
+}
+
+.trust-card h3{
+    font-size:18px;
+    margin-bottom:7px;
+}
+
+.trust-card p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* TOOLS */
+
+.tools{
+    background:white;
+}
+
+.tools-grid{
+    margin-top:48px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+}
+
+.tool{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:30px;
+}
+
+.tool-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    margin-bottom:20px;
+}
+
+.tool-icon{
+    width:50px;
+    height:50px;
+    border-radius:15px;
+    display:grid;
+    place-items:center;
+    background:white;
+    font-size:23px;
+}
+
+.tool h3{
+    font-family:"Manrope",sans-serif;
+    font-size:22px;
+}
+
+.tool p{
+    color:var(--muted);
+    font-size:14px;
+    margin:7px 0 20px;
+}
+
+.upload-box{
+    background:white;
+    border:2px dashed #CBD2DB;
+    border-radius:18px;
+    min-height:150px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.upload-box:hover{
+    border-color:var(--blue);
+    background:var(--blue-soft);
+}
+
+.upload-box input{
+    display:none;
+}
+
+.preview{
+    display:none;
+    margin-top:15px;
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid var(--border);
+    background:white;
+}
+
+.preview img{
+    max-height:230px;
+    width:100%;
+    object-fit:contain;
+}
+
+.tool-actions{
+    display:flex;
+    gap:9px;
+    margin-top:15px;
+}
+
+.tool-status{
+    color:var(--muted);
+    font-size:13px;
+    margin-top:10px;
+}
+
+/* LOCATION */
+
+.location{
+    background:var(--bg);
+}
+
+.location-grid{
+    margin-top:48px;
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:24px;
+}
+
+.location-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:30px;
+}
+
+.location-card h3{
+    font-family:"Manrope",sans-serif;
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.location-card p{
+    color:var(--muted);
+}
+
+.location-detail{
+    display:flex;
+    gap:13px;
+    padding:17px 0;
+    border-bottom:1px solid var(--border);
+}
+
+.location-detail:last-child{
+    border-bottom:0;
+}
+
+.detail-icon{
+    width:40px;
+    height:40px;
+    border-radius:12px;
+    display:grid;
+    place-items:center;
+    background:var(--blue-soft);
+    flex:none;
+}
+
+.map{
+    min-height:460px;
+    border-radius:var(--radius);
+    overflow:hidden;
+    border:1px solid var(--border);
+    box-shadow:var(--shadow-small);
+}
+
+.map iframe{
+    width:100%;
+    height:100%;
+    min-height:460px;
+    border:0;
+}
+
+/* FAQ */
+
+.faq{
+    background:white;
+}
+
+.faq-list{
+    margin-top:45px;
+    max-width:850px;
+}
+
+.faq-item{
+    border-bottom:1px solid var(--border);
+}
+
+.faq-question{
+    width:100%;
+    border:0;
+    background:transparent;
+    text-align:left;
+    padding:22px 0;
+    font-family:"Manrope",sans-serif;
+    font-size:17px;
+    font-weight:700;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.faq-answer{
+    display:none;
+    padding:0 0 22px;
+    color:var(--muted);
+}
+
+.faq-item.active .faq-answer{
+    display:block;
+}
+
+.faq-item.active .plus{
+    transform:rotate(45deg);
+}
+
+/* CTA */
+
+.final-cta{
+    padding:90px 0;
+}
+
+.cta-box{
+    background:#101828;
+    color:white;
+    border-radius:32px;
+    padding:60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    overflow:hidden;
+    position:relative;
+}
+
+.cta-box:after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    right:-100px;
+    top:-100px;
+    background:rgba(37,99,235,.25);
+}
+
+.cta-content{
+    position:relative;
+    z-index:1;
+}
+
+.cta-box h2{
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(30px,4vw,48px);
+    line-height:1.05;
+    margin-bottom:12px;
+}
+
+.cta-box p{
+    color:#CBD5E1;
+    max-width:580px;
+}
+
+.cta-actions{
+    position:relative;
+    z-index:1;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+/* FOOTER */
+
+footer{
+    background:#FFFFFF;
+    border-top:1px solid var(--border);
+    padding:50px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:40px;
+}
+
+.footer-brand p{
+    max-width:390px;
+    color:var(--muted);
+    margin-top:15px;
+}
+
+.footer-col h4{
+    font-family:"Manrope",sans-serif;
+    margin-bottom:13px;
+}
+
+.footer-col a{
+    display:block;
+    color:var(--muted);
+    font-size:14px;
+    margin:8px 0;
+}
+
+.footer-col a:hover{
+    color:var(--blue);
+}
+
+.footer-bottom{
+    border-top:1px solid var(--border);
+    padding-top:22px;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* MOBILE WHATSAPP */
+
+.mobile-whatsapp{
+    display:none;
+    position:fixed;
+    z-index:999;
+    bottom:14px;
+    left:14px;
+    right:14px;
+}
+
+.mobile-whatsapp a{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:9px;
+    min-height:53px;
+    background:var(--green);
+    color:white;
+    border-radius:15px;
+    font-weight:800;
+    box-shadow:0 12px 30px rgba(22,163,111,.3);
+}
+
+/* REVEAL */
+
+.reveal{
+    opacity:0;
+    transform:translateY(20px);
+    transition:opacity .6s ease,transform .6s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:none;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .nav-links,
+    .nav-actions{
+        display:none;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .hero{
+        padding-top:120px;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        gap:45px;
+    }
+
+    .hero-image{
+        height:420px;
+    }
+
+    .hero-card{
+        left:15px;
+    }
+
+    .choice-grid,
+    .trust-grid{
+        grid-template-columns:1fr;
+    }
+
+    .service-grid,
+    .tools-grid{
+        grid-template-columns:1fr;
+    }
+
+    .location-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .cta-box{
+        padding:45px 30px;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .container{
+        width:min(calc(100% - 26px),var(--max));
+    }
+
+    .section{
+        padding:72px 0;
+    }
+
+    .hero{
+        padding:110px 0 65px;
+    }
+
+    .hero h1{
+        font-size:43px;
+        letter-spacing:-2px;
+    }
+
+    .hero-text{
+        font-size:17px;
+    }
+
+    .hero-image{
+        height:350px;
+        border-radius:23px;
+    }
+
+    .hero-card{
+        bottom:15px;
+        left:12px;
+        right:12px;
+        max-width:none;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+    }
+
+    .hero-actions .btn{
+        width:100%;
+    }
+
+    .service-image{
+        height:220px;
+    }
+
+    .service-content{
+        padding:23px;
+    }
+
+    .tools-grid{
+        gap:15px;
+    }
+
+    .tool{
+        padding:22px;
+    }
+
+    .location-card{
+        padding:22px;
+    }
+
+    .map,
+    .map iframe{
+        min-height:360px;
+    }
+
+    .cta-box{
+        border-radius:23px;
+        padding:38px 23px;
+    }
+
+    .cta-actions{
+        width:100%;
+        flex-direction:column;
+    }
+
+    .cta-actions .btn{
+        width:100%;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+    }
+
+    .mobile-whatsapp{
+        display:block;
+    }
+
+    body{
+        padding-bottom:75px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<nav class="nav">
+    <div class="nav-inner">
+
+        <a href="#top" class="logo">
+
+            <div class="logo-mark">DB</div>
+
+            <div class="logo-text">
+                Digital Bright Solutions
+                <span>Digital & Business Services</span>
+            </div>
+
+        </a>
+
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#tools">Free Tools</a>
+            <a href="#location">Location</a>
+            <a href="#faq">FAQ</a>
+        </div>
+
+        <div class="nav-actions">
+
+            <a
+                class="btn btn-green"
+                href="https://wa.me/2347088794995?text=Hello%20Digital%20Bright%20Solutions%2C%20I%20need%20help%20with%20a%20service."
+                target="_blank"
+                rel="noopener"
+            >
+                WhatsApp
+            </a>
+
+        </div>
+
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">
+            ☰
+        </button>
+
+    </div>
+</nav>
+
+
+<main id="top">
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="container hero-grid">
+
+        <div class="reveal">
+
+            <div class="section-label">
+                📍 Serving customers around your area
+            </div>
+
+            <h1>
+                Need something
+                <span>typed, printed, designed or fixed?</span>
+            </h1>
+
+            <p class="hero-text">
+                Get it done around your area without going far.
+                From everyday document work to websites, graphics,
+                computer training and technical support.
+            </p>
+
+            <div class="hero-pills">
+
+                <span class="pill">Typing</span>
+                <span class="pill">Printing</span>
+                <span class="pill">Photocopying</span>
+                <span class="pill">Design</span>
+                <span class="pill">Websites</span>
+                <span class="pill">Computer Training</span>
+
+            </div>
+
+            <div class="hero-actions">
+
+                <a
+                    class="btn btn-green"
+                    href="https://wa.me/2347088794995?text=Hello%20Digital%20Bright%20Solutions%2C%20I%20have%20a%20job%20I%20need%20help%20with."
+                    target="_blank"
+                    rel="noopener"
+                >
+                    💬 Send a WhatsApp Message
+                </a>
+
+                <a class="btn btn-light" href="#services">
+                    See Services
+                </a>
+
+            </div>
+
+            <div class="location-line">
+                <span class="location-dot"></span>
+                Sango-Ota / Ogun State area
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual reveal">
+
+            <img
+                class="hero-image"
+                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=85"
+                alt="Professional workspace"
+                loading="eager"
+            >
+
+            <div class="hero-card">
+
+                <strong>Small job or big job?</strong>
+
+                <small>
+                    Just send us a message and tell us what you need.
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- QUICK CHOICE -->
+
+<section class="choice-section">
+
+    <div class="container">
+
+        <div class="choice-grid">
+
+            <a class="choice reveal" href="#printing">
+
+                <div class="choice-icon">🖨️</div>
+
+                <h3>I need something printed</h3>
+
+                <p>
+                    Printing, photocopying, typing, assignments,
+                    forms, CVs and documents.
+                </p>
+
+            </a>
+
+
+            <a class="choice reveal" href="#design">
+
+                <div class="choice-icon">🎨</div>
+
+                <h3>I need something designed</h3>
+
+                <p>
+                    Flyers, posters, invitations, social media
+                    graphics and business designs.
+                </p>
+
+            </a>
+
+
+            <a class="choice reveal" href="#technical">
+
+                <div class="choice-icon">💻</div>
+
+                <h3>I need help with technology</h3>
+
+                <p>
+                    Websites, computer problems, software,
+                    training and technical support.
+                </p>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="section services" id="services">
+
+    <div class="container">
+
+        <div class="section-label">What we do</div>
+
+        <h2 class="section-title">
+            Practical services for everyday people and businesses.
+        </h2>
+
+        <p class="section-subtitle">
+            You don't need to understand technology.
+            Just tell us what you need done.
+        </p>
+
+
+        <div class="service-grid">
+
+
+            <!-- TYPING -->
+
+            <article class="service reveal" id="typing">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBQynkFEN-4vgHdufKy9tAi2eYLIpRisHv-GXDt2txUA&s=10"
+                        alt="Professional office workspace"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-icon">⌨️</div>
+
+                    <h3>Typing & Document Preparation</h3>
+
+                    <p>
+                        Clean and properly arranged documents for
+                        school, work and personal use.
+                    </p>
+
+                    <div class="service-list">
+                        <span>Assignments</span>
+                        <span>CVs</span>
+                        <span>Letters</span>
+                        <span>Reports</span>
+                        <span>Forms</span>
+                        <span>School Projects</span>
+                    </div>
+
+                    <a
+                        class="btn btn-primary btn-full"
+                        href="https://wa.me/2347088794995?text=Hello%20Digital%20Bright%20Solutions%2C%20I%20need%20typing%20or%20document%20preparation."
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Ask About Typing
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRINTING -->
+
+            <article class="service reveal" id="printing">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGbt4v4QJSFDdrV0JIlDvlRsf0km1EbnCVvNnb5nis9g&s=10"
+                        alt="Printing and office documents"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-icon">🖨️</div>
+
+                    <h3>Printing & Photocopying</h3>
+
+                    <p>
+                        Get your documents printed and copied without
+                        travelling far.
+                    </p>
+
+                    <div class="service-list">
+                        <span>B&W Printing</span>
+                        <span>Photocopy</span>
+                        <span>Assignments</span>
+                        <span>Forms</span>
+                        <span>School Materials</span>
+                        <span>Business Documents</span>
+                    </div>
+
+                    <a
+                        class="btn btn-primary btn-full"
+                        href="https://wa.me/2347088794995?text=Hello%20Digital%20Bright%20Solutions%2C%20I%20need%20printing%20or%20photocopying."
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Ask About Printing
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- DESIGN -->
+
+            <article class="service reveal" id="design">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSarWQoHqALZxGh2PrOKfUmtrAgMKVulnfTuiNATNtM-Se9aq-sH9BV6YE&s=10"
+                        alt="Graphic designer working on a project"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-icon">🎨</div>
+
+                    <h3>Graphics & Branding</h3>
+
+                    <p>
+                        Professional designs that help individuals,
+                        schools and businesses look presentable.
+                    </p>
+
+                    <div class="service-list">
+                        <span>Flyers</span>
+                        <span>Posters</span>
+                        <span>Invitations</span>
+                        <span>Social Media</span>
+                        <span>School Designs</span>
+                        <span>Promo Materials</span>
+                    </div>
+
+                    <a
+                        class="btn btn-primary btn-full"
+                        href="https://wa.me/2347088794995?text=Hello%20Digital%20Bright%20Solutions%2C%20I%20need%20a%20graphic%20design."
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Request a Design
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- WEBSITE -->
+
+            <article class="service reveal" id="website">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85"
+                        alt="Website development workspace"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-icon">🌐</div>
+
+                    <h3>Website Development</h3>
+
+                    <p>
+                        Professional websites for businesses,
+                        schools, individuals and services.
+                    </p>
+
+                    <div class="service-list">
+                        <span>Business Websites</span>
+                        <span>School Websites</span>
+                        <span>Landing Pages</span>
+                        <span>Portfolio</span>
+                        <span>Service Websites</span>
+                    </div>
+
+                    <a
+                        class="btn btn-primary btn-full"
+                        href="https://wa.me/2347088794995?text=Hello%20Digital%20Bright%20Solutions%2C%20I%20want%20to%20build%20a%20website."
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Discuss a Website
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- TECH -->
+
+            <article class="service reveal" id="technical">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUMGV1HS84mhcORQPiLA0xZ8mVhWNWERA0LA8OOeUiww&s=10"
+                        alt="People working with technology"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-icon">🛠️</div>
+
+                    <h3>Technical Support</h3>
+
+                    <p>
+                        Help with everyday computer, software,
+                        printer and technology problems.
+                    </p>
+
+                    <div class="service-list">
+                        <span>Computer Setup</span>
+                        <span>Software Installation</span>
+                        <span>Windows Problems</span>
+                        <span>Printer Setup</span>
+                        <span>Troubleshooting</span>
+                    </div>
+
+                    <a
+                        class="btn btn-primary btn-full"
+                        href="https://wa.me/2347088794995?text=Hello%20Digital%20Bright%20Solutions%2C%20I%20need%20technical%20support."
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Get Technical Help
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- TRAINING -->
+
+            <article class="service reveal" id="training">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=85"
+                        alt="Computer training and learning"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-icon">🎓</div>
+
+                    <h3>Computer Training</h3>
+
+                    <p>
+                        Simple practical computer training for students,
+                        beginners, children and adults.
+                    </p>
+
+                    <div class="service-list">
+                        <span>Microsoft Word</span>
+                        <span>Excel</span>
+                        <span>PowerPoint</span>
+                        <span>Typing</span>
+                        <span>Internet</span>
+                        <span>Email</span>
+                    </div>
+
+                    <a
+                        class="btn btn-primary btn-full"
+                        href="https://wa.me/2347088794995?text=Hello%20Digital%20Bright%20Solutions%2C%20I%20want%20to%20ask%20about%20computer%20training."
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Ask About Training
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TRUST -->
+
+<section class="section trust">
+
+    <div class="container">
+
+        <div class="section-label">Why use us?</div>
+
+        <h2 class="section-title">
+            Simple service. Clear communication. Less stress.
+        </h2>
+
+        <div class="trust-grid">
+
+            <div class="trust-card reveal">
+
+                <div class="trust-number">01</div>
+
+                <h3>Nearby</h3>
+
+                <p>
+                    Get everyday digital and document services
+                    without travelling far.
+                </p>
+
+            </div>
+
+
+            <div class="trust-card reveal">
+
+                <div class="trust-number">02</div>
+
+                <h3>Easy to reach</h3>
+
+                <p>
+                    Send a WhatsApp message and explain what
+                    you need before coming over.
+                </p>
+
+            </div>
+
+
+            <div class="trust-card reveal">
+
+                <div class="trust-number">03</div>
+
+                <h3>Small or big jobs</h3>
+
+                <p>
+                    Whether you need one document or a complete
+                    digital solution, you can simply ask.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FREE TOOLS -->
+
+<section class="section tools" id="tools">
+
+    <div class="container">
+
+        <div class="section-label">Free tools</div>
+
+        <h2 class="section-title">
+            Useful tools you can use right here.
+        </h2>
+
+        <p class="section-subtitle">
+            No account. No complicated setup. Just use the tool
+            and download your result.
+        </p>
+
+
+        <div class="tools-grid">
+
+
+            <!-- IMAGE PDF -->
+
+            <div class="tool reveal">
+
+                <div class="tool-top">
+
+                    <div>
+                        <h3>Image → PDF</h3>
+                        <p>
+                            Turn one or more images into a PDF document.
+                        </p>
+                    </div>
+
+                    <div class="tool-icon">📄</div>
+
+                </div>
+
+                <label class="upload-box">
+
+                    <input
+                        type="file"
+                        id="pdfImages"
+                        accept="image/*"
+                        multiple
+                    >
+
+                    <div>
+                        <strong>Click to select images</strong>
+                        <br>
+                        <small>JPG, PNG and other common image files</small>
+                    </div>
+
+                </label>
+
+                <div class="preview" id="pdfPreview"></div>
+
+                <div class="tool-actions">
+
+                    <button
+                        class="btn btn-primary"
+                        id="makePDF"
+                        type="button"
+                    >
+                        Create PDF
+                    </button>
+
+                    <button
+                        class="btn btn-light"
+                        id="clearPDF"
+                        type="button"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+                <div class="tool-status" id="pdfStatus"></div>
+
+            </div>
+
+
+            <!-- COMPRESSOR -->
+
+            <div class="tool reveal">
+
+                <div class="tool-top">
+
+                    <div>
+                        <h3>Image Compressor</h3>
+                        <p>
+                            Reduce image size before sending or uploading.
+                        </p>
+                    </div>
+
+                    <div class="tool-icon">🗜️</div>
+
+                </div>
+
+                <label class="upload-box">
+
+                    <input
+                        type="file"
+                        id="compressImage"
+                        accept="image/*"
+                    >
+
+                    <div>
+                        <strong>Click to select an image</strong>
+                        <br>
+                        <small>Compression happens in your browser</small>
+                    </div>
+
+                </label>
+
+                <div class="preview" id="compressPreview"></div>
+
+                <div class="tool-actions">
+
+                    <button
+                        class="btn btn-primary"
+                        id="compressBtn"
+                        type="button"
+                    >
+                        Compress & Download
+                    </button>
+
+                    <button
+                        class="btn btn-light"
+                        id="clearCompress"
+                        type="button"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+                <div class="tool-status" id="compressStatus"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LOCATION -->
+
+<section class="section location" id="location">
+
+    <div class="container">
+
+        <div class="section-label">Find us</div>
+
+        <h2 class="section-title">
+            Don't travel far for simple digital jobs.
+        </h2>
+
+        <p class="section-subtitle">
+            We're positioned to serve customers around the
+            Sango-Ota / Ogun State area.
+        </p>
+
+
+        <div class="location-grid">
+
+            <div class="location-card reveal">
+
+                <h3>Our location</h3>
+
+                <p>
+                    Message us before coming so we can confirm
+                    availability and give you the right directions.
+                </p>
+
+
+                <div class="location-detail">
+
+                    <div class="detail-icon">📍</div>
+
+                    <div>
+                        <strong>Area</strong>
+                        <p>Sango-Ota, Ogun State, Nigeria</p>
+                    </div>
+
+                </div>
+
+
+                <div class="location-detail">
+
+                    <div class="detail-icon">🕐</div>
+
+                    <div>
+                        <strong>Working hours</strong>
+                        <p>Monday – Saturday · Contact us first</p>
+                    </div>
+
+                </div>
+
+
+                <div class="location-detail">
+
+                    <div class="detail-icon">📱</div>
+
+                    <div>
+                        <strong>WhatsApp</strong>
+                        <p>0708 879 4995</p>
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="btn btn-green btn-full"
+                    id="distanceBtn"
+                    type="button"
+                >
+                    📍 Check Approximate Distance
+                </button>
+
+                <div
+                    class="tool-status"
+                    id="distanceResult"
+                ></div>
+
+
+                <a
+                    class="btn btn-light btn-full"
+                    href="https://www.google.com/maps/search/?api=1&query=Sango-Ota%2C+Ogun%2C+Nigeria"
+                    target="_blank"
+                    rel="noopener"
+                    style="margin-top:10px;"
+                >
+                    Open Google Maps
+                </a>
+
+            </div>
+
+
+            <div class="map reveal">
+
+                <iframe
+                    src="https://www.google.com/maps?q=Sango-Ota,Ogun,Nigeria&output=embed"
+                    loading="lazy"
+                    title="Digital Bright Solutions location map"
+                ></iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="section faq" id="faq">
+
+    <div class="container">
+
+        <div class="section-label">Questions</div>
+
+        <h2 class="section-title">
+            Before you message us
+        </h2>
+
+        <div class="faq-list">
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Can I ask for the price on WhatsApp?
+                    <span class="plus">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Yes. Send us what you need and, where possible,
+                    include the quantity, size or type of work.
+                    We'll respond with the relevant information.
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Can I send my document on WhatsApp?
+                    <span class="plus">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Yes. For many document-related jobs, you can
+                    send the file through WhatsApp first and we can
+                    tell you what to do next.
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Do you handle small jobs?
+                    <span class="plus">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Yes. Small everyday jobs are part of what the
+                    service is designed for. Simply ask.
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Do I need to come physically for everything?
+                    <span class="plus">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Not necessarily. Some jobs can be discussed,
+                    sent or completed remotely. Message us first
+                    and we'll tell you what is possible.
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Do you build websites for small businesses?
+                    <span class="plus">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Yes. We can build simple professional websites
+                    for businesses, schools, individuals and service
+                    providers.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL CTA -->
+
+<section class="final-cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <div class="cta-content">
+
+                <h2>
+                    Got something you need done?
+                </h2>
+
+                <p>
+                    Send us a message. Tell us what you need and
+                    let's figure out the best way to get it done.
+                </p>
+
+            </div>
+
+
+            <div class="cta-actions">
+
+                <a
+                    class="btn btn-green"
+                    href="https://wa.me/2347088794995?text=Hello%20Digital%20Bright%20Solutions%2C%20I%20need%20help%20with%20something."
+                    target="_blank"
+                    rel="noopener"
+                >
+                    💬 Chat on WhatsApp
+                </a>
+
+                <a
+                    class="btn"
+                    style="background:white;color:#101828;"
+                    href="#services"
+                >
+                    View Services
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="#top" class="logo">
+
+                    <div class="logo-mark">DB</div>
+
+                    <div class="logo-text">
+                        Digital Bright Solutions
+                        <span>Digital & Business Services</span>
+                    </div>
+
+                </a>
+
+                <p>
+                    Your nearby place for digital, document,
+                    computer and business services.
+                </p>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h4>Services</h4>
+
+                <a href="#typing">Typing</a>
+                <a href="#printing">Printing</a>
+                <a href="#design">Graphics & Branding</a>
+                <a href="#website">Website Development</a>
+                <a href="#technical">Technical Support</a>
+                <a href="#training">Computer Training</a>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h4>Contact</h4>
+
+                <a
+                    href="https://wa.me/2347088794995"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    WhatsApp: 0708 879 4995
+                </a>
+
+                <a href="#location">
+                    Sango-Ota, Ogun State
+                </a>
+
+                <a href="#tools">
+                    Free Tools
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © <span id="year"></span> Digital Bright Solutions.
+                All rights reserved.
+            </span>
+
+            <span>
+                Built for real people and real businesses.
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- MOBILE WHATSAPP -->
+
+<div class="mobile-whatsapp">
+
+    <a
+        href="https://wa.me/2347088794995?text=Hello%20Digital%20Bright%20Solutions%2C%20I%20need%20help%20with%20a%20service."
+        target="_blank"
+        rel="noopener"
+    >
+        💬 Chat with us on WhatsApp
+    </a>
+
+</div>
+
+
+<script>
+
+/* =========================
+   BASIC CONFIG
+========================= */
+
+const WHATSAPP = "2347088794995";
+
+
+/* =========================
+   YEAR
+========================= */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const mobileMenu =
+    document.getElementById("mobileMenu");
+
+let menuOpen = false;
+
+mobileMenu.addEventListener("click", () => {
+
+    menuOpen = !menuOpen;
+
+    if(menuOpen){
+
+        const navLinks =
+            document.querySelector(".nav-links");
+
+        navLinks.style.display = "flex";
+        navLinks.style.position = "absolute";
+        navLinks.style.top = "70px";
+        navLinks.style.left = "13px";
+        navLinks.style.right = "13px";
+        navLinks.style.padding = "18px";
+        navLinks.style.background = "white";
+        navLinks.style.border = "1px solid #E4E7EC";
+        navLinks.style.borderRadius = "18px";
+        navLinks.style.boxShadow =
+            "0 18px 50px rgba(16,24,40,.12)";
+        navLinks.style.flexDirection = "column";
+        navLinks.style.alignItems = "flex-start";
+
+    }else{
+
+        document.querySelector(".nav-links")
+            .removeAttribute("style");
+
+    }
+
+});
+
+
+/* Close mobile menu */
+
+document.querySelectorAll(".nav-links a")
+.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        if(window.innerWidth <= 900){
+
+            document.querySelector(".nav-links")
+                .removeAttribute("style");
+
+            menuOpen = false;
+
+        }
+
+    });
+
+});
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("visible");
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+document.querySelectorAll(".reveal")
+.forEach(el => observer.observe(el));
+
+
+/* =========================
+   FAQ
+========================= */
+
+document.querySelectorAll(".faq-question")
+.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const item =
+            button.parentElement;
+
+        item.classList.toggle("active");
+
+    });
+
+});
+
+
+/* =========================
+   IMAGE → PDF
+========================= */
+
+const pdfInput =
+    document.getElementById("pdfImages");
+
+const pdfPreview =
+    document.getElementById("pdfPreview");
+
+const pdfStatus =
+    document.getElementById("pdfStatus");
+
+let pdfFiles = [];
+
+pdfInput.addEventListener("change", () => {
+
+    pdfFiles =
+        Array.from(pdfInput.files);
+
+    pdfPreview.innerHTML = "";
+
+    if(!pdfFiles.length){
+
+        pdfPreview.style.display = "none";
+        return;
+
+    }
+
+    pdfPreview.style.display = "block";
+
+    pdfFiles.forEach(file => {
+
+        const img =
+            document.createElement("img");
+
+        img.style.width = "100%";
+        img.style.maxHeight = "120px";
+        img.style.objectFit = "contain";
+        img.style.display = "block";
+        img.style.marginBottom = "5px";
+
+        img.src =
+            URL.createObjectURL(file);
+
+        pdfPreview.appendChild(img);
+
+    });
+
+    pdfStatus.textContent =
+        `${pdfFiles.length} image${pdfFiles.length > 1 ? "s" : ""} selected.`;
+
+});
+
+
+document.getElementById("clearPDF")
+.addEventListener("click", () => {
+
+    pdfInput.value = "";
+    pdfFiles = [];
+    pdfPreview.innerHTML = "";
+    pdfPreview.style.display = "none";
+    pdfStatus.textContent = "";
+
+});
+
+
+document.getElementById("makePDF")
+.addEventListener("click", async () => {
+
+    if(!pdfFiles.length){
+
+        pdfStatus.textContent =
+            "Please select at least one image.";
+
+        return;
+
+    }
+
+    pdfStatus.textContent =
+        "Creating your PDF...";
+
+    const { jsPDF } = window.jspdf;
+
+    const pdf =
+        new jsPDF({
+            orientation:"portrait",
+            unit:"mm",
+            format:"a4"
+        });
+
+    for(let i = 0; i < pdfFiles.length; i++){
+
+        const file =
+            pdfFiles[i];
+
+        const dataURL =
+            await readFile(file);
+
+        const image =
+            await loadImage(dataURL);
+
+        const pageWidth = 210;
+        const pageHeight = 297;
+
+        const margin = 10;
+
+        const maxWidth =
+            pageWidth - margin * 2;
+
+        const maxHeight =
+            pageHeight - margin * 2;
+
+        const ratio =
+            Math.min(
+                maxWidth / image.width,
+                maxHeight / image.height
+            );
+
+        const width =
+            image.width * ratio;
+
+        const height =
+            image.height * ratio;
+
+        const x =
+            (pageWidth - width) / 2;
+
+        const y =
+            (pageHeight - height) / 2;
+
+        if(i > 0){
+
+            pdf.addPage();
+
+        }
+
+        pdf.addImage(
+            dataURL,
+            "JPEG",
+            x,
+            y,
+            width,
+            height
+        );
+
+    }
+
+    pdf.save("digital-bright-document.pdf");
+
+    pdfStatus.textContent =
+        "Your PDF has been created.";
+
+});
+
+
+function readFile(file){
+
+    return new Promise((resolve,reject) => {
+
+        const reader =
+            new FileReader();
+
+        reader.onload =
+            () => resolve(reader.result);
+
+        reader.onerror =
+            reject;
+
+        reader.readAsDataURL(file);
+
+    });
+
+}
+
+
+function loadImage(src){
+
+    return new Promise((resolve,reject) => {
+
+        const img =
+            new Image();
+
+        img.onload =
+            () => resolve(img);
+
+        img.onerror =
+            reject;
+
+        img.src = src;
+
+    });
+
+}
+
+
+/* =========================
+   IMAGE COMPRESSOR
+========================= */
+
+const compressInput =
+    document.getElementById("compressImage");
+
+const compressPreview =
+    document.getElementById("compressPreview");
+
+const compressStatus =
+    document.getElementById("compressStatus");
+
+let compressionFile = null;
+
+compressInput.addEventListener("change", () => {
+
+    compressionFile =
+        compressInput.files[0];
+
+    if(!compressionFile){
+
+        compressPreview.style.display = "none";
+        return;
+
+    }
+
+    compressPreview.innerHTML = "";
+
+    const img =
+        document.createElement("img");
+
+    img.src =
+        URL.createObjectURL(compressionFile);
+
+    compressPreview.appendChild(img);
+
+    compressPreview.style.display = "block";
+
+    compressStatus.textContent =
+        `Original size: ${formatBytes(compressionFile.size)}`;
+
+});
+
+
+document.getElementById("clearCompress")
+.addEventListener("click", () => {
+
+    compressInput.value = "";
+    compressionFile = null;
+
+    compressPreview.innerHTML = "";
+    compressPreview.style.display = "none";
+
+    compressStatus.textContent = "";
+
+});
+
+
+document.getElementById("compressBtn")
+.addEventListener("click", async () => {
+
+    if(!compressionFile){
+
+        compressStatus.textContent =
+            "Please select an image first.";
+
+        return;
+
+    }
+
+    compressStatus.textContent =
+        "Compressing image...";
+
+    const dataURL =
+        await readFile(compressionFile);
+
+    const image =
+        await loadImage(dataURL);
+
+    const canvas =
+        document.createElement("canvas");
+
+    const maxWidth = 1800;
+
+    let width = image.width;
+    let height = image.height;
+
+    if(width > maxWidth){
+
+        height =
+            height * (maxWidth / width);
+
+        width =
+            maxWidth;
+
+    }
+
+    canvas.width = width;
+    canvas.height = height;
+
+    const ctx =
+        canvas.getContext("2d");
+
+    ctx.drawImage(
+        image,
+        0,
+        0,
+        width,
+        height
+    );
+
+    canvas.toBlob(blob => {
+
+        const url =
+            URL.createObjectURL(blob);
+
+        const link =
+            document.createElement("a");
+
+        link.href = url;
+
+        link.download =
+            "compressed-image.jpg";
+
+        link.click();
+
+        URL.revokeObjectURL(url);
+
+        compressStatus.textContent =
+            `Compressed size: ${formatBytes(blob.size)}. Download started.`;
+
+    }, "image/jpeg", .72);
+
+});
+
+
+function formatBytes(bytes){
+
+    if(bytes === 0) return "0 Bytes";
+
+    const units =
+        ["Bytes","KB","MB","GB"];
+
+    const index =
+        Math.floor(
+            Math.log(bytes) /
+            Math.log(1024)
+        );
+
+    return (
+        parseFloat(
+            (bytes /
+            Math.pow(1024,index))
+            .toFixed(2)
+        )
+        + " "
+        + units[index]
+    );
+
+}
+
+
+/* =========================
+   APPROXIMATE DISTANCE
+========================= */
+
+/*
+IMPORTANT:
+Replace these two values with the
+business's actual public coordinates
+when you are ready.
+*/
+
+const BUSINESS_LATITUDE = null;
+const BUSINESS_LONGITUDE = null;
+
+
+document.getElementById("distanceBtn")
+.addEventListener("click", () => {
+
+    const result =
+        document.getElementById("distanceResult");
+
+    if(
+        BUSINESS_LATITUDE === null ||
+        BUSINESS_LONGITUDE === null
+    ){
+
+        result.textContent =
+            "Approximate distance is not configured yet. Please use Google Maps or WhatsApp for directions.";
+
+        return;
+
+    }
+
+    if(!navigator.geolocation){
+
+        result.textContent =
+            "Your browser does not support location detection.";
+
+        return;
+
+    }
+
+    result.textContent =
+        "Checking your approximate distance...";
+
+    navigator.geolocation.getCurrentPosition(
+
+        position => {
+
+            const userLat =
+                position.coords.latitude;
+
+            const userLon =
+                position.coords.longitude;
+
+            const distance =
+                haversine(
+                    userLat,
+                    userLon,
+                    BUSINESS_LATITUDE,
+                    BUSINESS_LONGITUDE
+                );
+
+            result.textContent =
+                `You are approximately ${distance.toFixed(1)} km away.`;
+
+        },
+
+        () => {
+
+            result.textContent =
+                "Location permission was not granted. You can still use Google Maps for directions.";
+
+        }
+
+    );
+
+});
+
+
+function haversine(
+    lat1,
+    lon1,
+    lat2,
+    lon2
+){
+
+    const R = 6371;
+
+    const dLat =
+        toRad(lat2-lat1);
+
+    const dLon =
+        toRad(lon2-lon1);
+
+    const a =
+        Math.sin(dLat/2) *
+        Math.sin(dLat/2) +
+
+        Math.cos(toRad(lat1)) *
+        Math.cos(toRad(lat2)) *
+
+        Math.sin(dLon/2) *
+        Math.sin(dLon/2);
+
+    const c =
+        2 *
+        Math.atan2(
+            Math.sqrt(a),
+            Math.sqrt(1-a)
+        );
+
+    return R*c;
+
+}
+
+
+function toRad(value){
+
+    return value *
+        Math.PI / 180;
+
+}
+
+</script>
+
+
+<!-- LOCAL BUSINESS STRUCTURED DATA -->
+
+<script type="application/ld+json">
+
+{
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Digital Bright Solutions",
+    "url":"https://digitalbrightsolutions.space/",
+    "telephone":"+2347088794995",
+    "description":"Digital, document, computer and business services including printing, typing, graphic design, website development, computer training and technical support.",
+    "areaServed":{
+        "@type":"Place",
+        "name":"Sango-Ota, Ogun State, Nigeria"
+    },
+    "sameAs":[
+        "https://wa.me/2347088794995"
+    ],
+    "serviceType":[
+        "Typing",
+        "Printing",
+        "Photocopying",
+        "Graphic Design",
+        "Website Development",
+        "Technical Support",
+        "Computer Training"
+    ]
+}
+
+</script>
+
+</body>
+</html>
